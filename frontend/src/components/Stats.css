@@ -1,0 +1,115 @@
+/* ===== STATS SECTION — DI BAWAH HERO, VERTIKAL ===== */
+.stats-section {
+  background: linear-gradient(180deg, #1A0F0A 0%, #241610 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(198, 151, 90, 0.15), transparent);
+}
+
+.stats-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(198, 151, 90, 0.15), transparent);
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 22px 24px;
+  position: relative;
+  transition: all 0.3s var(--ease-out-expo);
+  border-radius: var(--radius-lg);
+}
+
+.stats-item:hover {
+  background: rgba(245, 237, 230, 0.02);
+}
+
+/* Divider between items */
+.stats-item + .stats-item {
+  border-top: 1px solid rgba(245, 237, 230, 0.04);
+}
+
+.stats-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(198, 151, 90, 0.06);
+  border: 1px solid rgba(198, 151, 90, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.stats-item:hover .stats-icon-wrap {
+  background: rgba(198, 151, 90, 0.1);
+  border-color: rgba(198, 151, 90, 0.2);
+  transform: scale(1.05);
+}
+
+.stats-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.stats-info {
+  flex: 1;
+  text-align: left;
+}
+
+.stats-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stats-label {
+  font-size: 0.8rem;
+  color: rgba(245, 237, 230, 0.35);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+  .stats-container { padding: 24px 16px; }
+  .stats-item { padding: 18px 16px; gap: 16px; }
+  .stats-icon-wrap { width: 48px; height: 48px; }
+  .stats-icon { font-size: 1.2rem; }
+  .stats-number { font-size: 1.6rem; }
+}
